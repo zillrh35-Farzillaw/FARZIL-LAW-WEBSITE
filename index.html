@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARZIL LAW - Advocates, Corporates & Legal Consultants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #000000;
+            --primary-light: #1a1a1a;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f5f5f5;
+            --bg-white: #ffffff;
+            --black: #000000;
+            --gray-light: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo-text p {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.65rem;
+            color: var(--text-light);
+            letter-spacing: 0.15em;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s, border-bottom 0.3s;
+            position: relative;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(26, 26, 26, 0.65) 100%), url('assets/images/office.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--bg-white);
+            padding: 10rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--bg-white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            color: var(--bg-white);
+        }
+
+        .hero-title-underline {
+            width: 100px;
+            height: 2px;
+            background: var(--bg-white);
+            margin: 1.5rem auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--bg-white);
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid var(--bg-white);
+            border-radius: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--bg-white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--bg-white);
+            border-color: var(--bg-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-white);
+            color: var(--primary-dark);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        section.light-bg {
+            background-color: var(--bg-light);
+        }
+
+        section.dark-bg {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        section.light-bg .section-title {
+            color: var(--primary-dark);
+        }
+
+        section.dark-bg .section-title {
+            color: var(--bg-white);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--primary-dark);
+        }
+
+        section.dark-bg .section-title::after {
+            background: var(--bg-white);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section.dark-bg .section-subtitle {
+            color: #ccc;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 3px solid var(--primary-dark);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        section.dark-bg .about-content p {
+            color: #ddd;
+        }
+
+        /* Practice Areas */
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .practice-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 2px;
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-dark);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        section.dark-bg .practice-card {
+            background: rgba(255,255,255,0.05);
+            border-left-color: var(--bg-white);
+        }
+
+        .practice-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .practice-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .practice-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        section.dark-bg .practice-card h3 {
+            color: var(--bg-white);
+        }
+
+        .practice-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        section.dark-bg .practice-card p {
+            color: #ccc;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: var(--bg-white);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 3px solid var(--primary-dark);
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .team-info p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .team-info .specialization {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        section.dark-bg .contact-form {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        section.dark-bg .contact-form h3 {
+            color: var(--bg-white);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #c0392b;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        section.dark-bg .form-group input,
+        section.dark-bg .form-group textarea {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+            color: var(--bg-white);
+        }
+
+        section.dark-bg .form-group input::placeholder,
+        section.dark-bg .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-dark);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            flex-shrink: 0;
+        }
+
+        section.dark-bg .info-icon {
+            color: var(--bg-white);
+        }
+
+        .info-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        section.dark-bg .info-content h4 {
+            color: var(--bg-white);
+        }
+
+        .info-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        section.dark-bg .info-content p {
+            color: #ccc;
+        }
+
+        .info-content a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.3s;
+        }
+
+        section.dark-bg .info-content a {
+            color: var(--bg-white);
+        }
+
+        .info-content a:hover {
+            opacity: 0.8;
+        }
+
+        /* Newsletter */
+        .newsletter-wrapper {
+            background: var(--primary-dark);
+            padding: 3rem;
+            border-radius: 2px;
+            text-align: center;
+            margin-top: 2rem;
+            border: 1px solid var(--gray-light);
+        }
+
+        .newsletter-wrapper h4 {
+            color: var(--bg-white);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .newsletter-wrapper p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--gray-light);
+            border-radius: 2px;
+            font-size: 0.9rem;
+            background: var(--bg-white);
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 2rem;
+            background: var(--bg-white);
+            color: var(--primary-dark);
+            border: 1px solid var(--gray-light);
+            border-radius: 2px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--gray-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            padding: 3rem 2rem;
+            border-top: 2px solid var(--black);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--bg-white);
+        }
+
+        .footer-section a,
+        .footer-section p {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--bg-white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            font-size: 1.2rem;
+            margin: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--bg-white);
+            color: var(--primary-dark);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+                min-height: auto;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .practices-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.5rem 0;
+            }
+
+            .header-content {
+                padding: 0 1rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text h1 {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .logo-text p {
+                font-size: 0.55rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+                min-height: auto;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="FARZIL LAW Logo">
+                <div class="logo-text">
+                    <h1>FARZIL LAW</h1>
+                    <p>ADVOCATES, CORPORATES & LEGAL CONSULTANTS</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link active">HOME</a></li>
+                    <li><a href="#about" class="nav-link">ABOUT</a></li>
+                    <li><a href="#practices" class="nav-link">PRACTICES</a></li>
+                    <li><a href="#team" class="nav-link">TEAM</a></li>
+                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>FARZIL LAW</h2>
+            <div class="hero-title-underline"></div>
+            <p class="hero-subtitle">Expert Legal Services Tailored to Your Needs in Lahore and Beyond</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">GET LEGAL HELP</a>
+                <a href="#practices" class="btn btn-outline">EXPLORE SERVICES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="about" class="light-bg">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Successful Cases</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Practice Areas</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">About FARZIL LAW</h2>
+            <div class="about-content">
+                <p>Your trusted Advocates and Attorneys in Lahore, providing expert advocacy and consultancy across 20+ practice areas. At FARZIL LAW, we are committed to delivering comprehensive legal solutions with a focus on client satisfaction and business results.</p>
+                <p>Our experienced team of advocates and corporate consultants brings a wealth of expertise in commercial dispute resolution, corporate transactions, and non-contentious advisory work. We represent clients across Lahore and beyond, with a strong network of connections to leading law firms and individual counsel worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practices" class="dark-bg">
+        <div class="section-container">
+            <h2 class="section-title">Our Key Practice Areas</h2>
+            <p class="section-subtitle">Comprehensive legal solutions tailored for your needs in various domains</p>
+
+            <div class="practices-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">🏢</div>
+                    <h3>Corporate Law</h3>
+                    <p>Expert guidance for businesses on compliance, contracts, and transactions.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Family Law</h3>
+                    <p>Compassionate support in matters of divorce, custody, and property disputes.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">⚖️</div>
+                    <h3>Civil Law & Litigation</h3>
+                    <p>Representation in civil cases, disputes, and related legal proceedings.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🏠</div>
+                    <h3>Property & Land Laws</h3>
+                    <p>Advocacy in property transactions, disputes, and land ownership issues.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🚨</div>
+                    <h3>Criminal Law</h3>
+                    <p>Legal assistance with criminal defense, investigations, and related proceedings.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🛡️</div>
+                    <h3>Consumer & Insurance Laws</h3>
+                    <p>Protection of consumer rights and claims under insurance policies.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">💼</div>
+                    <h3>Criminal & NAB Laws</h3>
+                    <p>Defense in financial crimes, NAB inquiries, and corporate fraud cases.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">📜</div>
+                    <h3>Constitutional Law</h3>
+                    <p>Litigation and advisory on constitutional rights and governance matters.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">💰</div>
+                    <h3>Excise & Taxation</h3>
+                    <p>Representation in taxation matters, excise disputes, and compliance.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🤝</div>
+                    <h3>ADR & Arbitration</h3>
+                    <p>Resolution of disputes through mediation, arbitration, and alternatives to litigation.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🏦</div>
+                    <h3>Banking & Finance Laws</h3>
+                    <p>Guidance on banking regulations, lending, and financial disputes.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">⚙️</div>
+                    <h3>Additional Expertise</h3>
+                    <p>Comprehensive legal services across multiple specialized practice areas and industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="light-bg">
+        <div class="section-container">
+            <h2 class="section-title">Our Legal Team</h2>
+            <p class="section-subtitle">Experienced advocates and consultants dedicated to your legal needs</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">👨‍⚖️</div>
+                    <div class="team-info">
+                        <h3>Lead Advocate</h3>
+                        <p>Senior Partner</p>
+                        <p class="specialization">Corporate & Commercial Law</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">👩‍⚖️</div>
+                    <div class="team-info">
+                        <h3>Legal Consultant</h3>
+                        <p>Associate</p>
+                        <p class="specialization">Litigation & Dispute Resolution</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">👨‍⚖️</div>
+                    <div class="team-info">
+                        <h3>Corporate Counsel</h3>
+                        <p>Associate</p>
+                        <p class="specialization">Property & Real Estate Law</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="dark-bg">
+        <div class="section-container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with FARZIL LAW for legal assistance</p>
+
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form name="contact" method="POST" netlify>
+                        <div class="form-group">
+                            <label for="name">Your First Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Enter the subject of your inquiry">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%; text-align: center;">SUBMIT YOUR INQUIRY</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <a href="mailto:contact@farzillaw.com">contact@farzillaw.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+923314942656">+92-331-4942656</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>Lahore, Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div class="newsletter-wrapper">
+                        <h4>Subscribe for Legal Insights</h4>
+                        <p>Stay updated on our legal services and news</p>
+                        <form name="newsletter" method="POST" netlify class="newsletter-form">
+                            <input type="email" name="email" placeholder="Your Email Address" required>
+                            <button type="submit">SUBSCRIBE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About FARZIL LAW</h4>
+                <p>Your trusted Advocates, Corporates and Legal Consultants in Lahore, providing comprehensive legal solutions across multiple practice areas.</p>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Facebook">f</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#practices">PRACTICE AREAS</a>
+                <a href="#team">TEAM</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>FARZIL LAW - Contact Info</h4>
+                <p>📧 <a href="mailto:contact@farzillaw.com">contact@farzillaw.com</a></p>
+                <p>📞 <a href="tel:+923314942656">+92-331-4942656</a></p>
+                <p>📍 Lahore, Pakistan</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>FARZIL LAW © 2025. All rights reserved. | Advocates, Corporates & Legal Consultants</p>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
