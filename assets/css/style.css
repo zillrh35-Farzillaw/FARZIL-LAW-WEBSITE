@@ -168,6 +168,13 @@ nav a.active {
     }
 }
 
+.hero-logo-mark {
+    width: 130px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
 .hero h2 {
     font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
