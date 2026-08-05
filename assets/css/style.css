@@ -809,6 +809,30 @@ section.dark-bg .office-block .office-name {
     color: var(--bg-white);
 }
 
+.office-map-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.office-map-link:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-dark);
+}
+
+section.dark-bg .office-map-link {
+    color: #cfcfcf;
+}
+
+section.dark-bg .office-map-link:hover {
+    color: var(--bg-white);
+    border-bottom-color: var(--bg-white);
+}
+
 .info-card {
     display: flex;
     gap: 1.5rem;
