@@ -973,6 +973,110 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 2.4rem 2.2rem 2rem;
+    box-shadow: 0 4px 24px rgba(13,13,13,0.06);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+section.dark-bg .testimonial-card {
+    background: rgba(255,255,255,0.05);
+}
+
+.testimonial-card .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--gray-light);
+    margin-bottom: 0.5rem;
+}
+
+section.dark-bg .testimonial-card .quote-mark {
+    color: rgba(255,255,255,0.18);
+}
+
+.testimonial-card .quote-text {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 1.02rem;
+    line-height: 1.75;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+section.dark-bg .testimonial-card .quote-text {
+    color: #cfcfcf;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+section.dark-bg .testimonial-author {
+    border-top-color: rgba(255,255,255,0.12);
+}
+
+.testimonial-author .name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 1.05rem;
+}
+
+section.dark-bg .testimonial-author .name {
+    color: var(--bg-white);
+}
+
+.testimonial-author .role {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 0.2rem;
+}
+
+section.dark-bg .testimonial-author .role {
+    color: #b8b8b8;
+}
+
+.testimonial-author .li-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--primary-dark);
+    color: var(--bg-white);
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    font-family: Georgia, serif;
+}
+
+.testimonials-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
 /* Career page */
 .career-card {
     max-width: 800px;
