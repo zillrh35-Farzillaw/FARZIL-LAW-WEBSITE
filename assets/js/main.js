@@ -1,4 +1,41 @@
+// Page loader
+(function () {
+    var loader = document.getElementById('pageLoader');
+    if (!loader) return;
+    var hidden = false;
+    var hide = function () {
+        if (hidden) return;
+        hidden = true;
+        loader.classList.add('loader-hidden');
+        setTimeout(function () {
+            if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 650);
+    };
+    var minDelay = 1200;
+    var start = Date.now();
+    window.addEventListener('load', function () {
+        var elapsed = Date.now() - start;
+        setTimeout(hide, Math.max(0, minDelay - elapsed));
+    });
+    setTimeout(hide, 3000);
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
+    // Capabilities tabs
+    var capTabs = document.querySelectorAll('.cap-tab');
+    if (capTabs.length) {
+        capTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var target = tab.getAttribute('data-tab');
+                capTabs.forEach(function (t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+                document.querySelectorAll('.capabilities-panel').forEach(function (panel) {
+                    panel.classList.toggle('active', panel.id === 'cap-' + target);
+                });
+            });
+        });
+    }
+
     // Mobile nav toggle
     var toggle = document.querySelector('.nav-toggle');
     var navList = document.querySelector('nav ul');
