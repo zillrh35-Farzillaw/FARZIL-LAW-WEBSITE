@@ -1158,6 +1158,23 @@ section.dark-bg .testimonial-author .role {
     object-fit: cover;
 }
 
+.center-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 0.6rem;
+}
+
+@media (max-width: 768px) {
+    .center-logo-badge { width: 100px; height: 100px; }
+    .center-hero-title { font-size: 1.9rem; }
+}
+
+@media (max-width: 480px) {
+    .center-hero { padding: 3rem 1.2rem; }
+    .center-logo-badge { width: 84px; height: 84px; }
+    .center-hero-title { font-size: 1.5rem; }
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1545,10 +1562,11 @@ section.dark-bg .testimonial-author .role {
 }
 
 .loader-brand-line--tag {
-    font-size: 0.66rem;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-top: 0.3rem;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: var(--bg-white);
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 480px) {
@@ -1558,7 +1576,7 @@ section.dark-bg .testimonial-author .role {
     .loader-brand--full { max-width: 250px; }
     .loader-brand-line--main { font-size: 0.82rem; letter-spacing: 3px; }
     .loader-brand-line--sub { font-size: 0.62rem; letter-spacing: 1.5px; }
-    .loader-brand-line--tag { font-size: 0.58rem; letter-spacing: 2px; }
+    .loader-brand-line--tag { font-size: 0.78rem; letter-spacing: 2.5px; }
 }
 
 /* Capabilities Tabs */
