@@ -1081,6 +1081,25 @@ section.dark-bg .testimonial-author .role {
     font-family: Georgia, serif;
 }
 
+.testimonial-author .written-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--gray-light);
+    border-radius: 5px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+section.dark-bg .testimonial-author .written-badge {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #cfcfcf;
+}
+
 .testimonials-teaser-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
