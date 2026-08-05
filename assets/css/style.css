@@ -1085,14 +1085,21 @@ section.dark-bg .testimonial-author .role {
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
-    padding: 0.35rem 0.6rem;
+    justify-content: center;
+    text-align: center;
+    width: 76px;
+    line-height: 1.3;
+    padding: 0.4rem 0.3rem;
     border: 1px solid var(--gray-light);
     border-radius: 5px;
-    font-size: 0.62rem;
+    font-size: 0.58rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     color: var(--text-light);
-    white-space: nowrap;
+}
+
+.testimonial-author > div:first-child {
+    min-width: 0;
 }
 
 section.dark-bg .testimonial-author .written-badge {
