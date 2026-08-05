@@ -966,6 +966,10 @@ footer {
     transition: all 0.3s;
 }
 
+.social-links svg {
+    display: block;
+}
+
 .social-links a:hover {
     background: var(--bg-white);
     border-color: var(--bg-white);
