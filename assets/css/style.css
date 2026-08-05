@@ -1316,6 +1316,10 @@ section.dark-bg .testimonial-author .role {
         letter-spacing: 1px;
     }
 
+    .hero-logo-mark {
+        width: 80px;
+    }
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
@@ -1410,6 +1414,11 @@ section.dark-bg .testimonial-author .role {
 
     .hero h2 {
         font-size: 1.8rem;
+    }
+
+    .hero-logo-mark {
+        width: 58px;
+        margin-bottom: 0.6rem;
     }
 
     .section-title {
