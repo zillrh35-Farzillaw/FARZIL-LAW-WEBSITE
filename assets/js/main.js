@@ -55,4 +55,28 @@ document.addEventListener('DOMContentLoaded', function () {
             counters.forEach(animateCounter);
         }
     }
+
+    // Contact form -> WhatsApp handoff
+    var waForm = document.getElementById('whatsappContactForm');
+    if (waForm) {
+        waForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var number = waForm.getAttribute('data-whatsapp-number');
+            var name = (waForm.querySelector('#name') || {}).value || '';
+            var email = (waForm.querySelector('#email') || {}).value || '';
+            var subject = (waForm.querySelector('#subject') || {}).value || '';
+            var message = (waForm.querySelector('#message') || {}).value || '';
+
+            var lines = [
+                'New inquiry from farzillaw.com',
+                'Name: ' + name,
+                'Email: ' + email
+            ];
+            if (subject) lines.push('Subject: ' + subject);
+            lines.push('Message: ' + message);
+
+            var text = encodeURIComponent(lines.join('\n'));
+            window.location.href = 'https://wa.me/' + number + '?text=' + text;
+        });
+    }
 });
