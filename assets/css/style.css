@@ -662,6 +662,19 @@ section.dark-bg .practice-card p {
     font-weight: 800;
 }
 
+.read-more-link {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
 /* Home page teaser grid (smaller team preview) */
 .team-grid-mini {
     display: grid;
