@@ -61,6 +61,11 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://farzillaw.com/gulzar-altaf.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://farzillaw.com/ashir-khan-sadozai.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
