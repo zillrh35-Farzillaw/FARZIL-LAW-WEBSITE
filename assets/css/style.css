@@ -1263,17 +1263,24 @@ section.dark-bg .testimonial-author .role {
         display: flex;
     }
 
-    nav {
-        width: 100%;
+    .header-content {
+        position: relative;
     }
 
     nav ul {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
         width: 100%;
-        padding-top: 1rem;
+        margin-top: 1rem;
+        padding: 1rem 1.5rem 0.5rem;
+        background: var(--bg-white);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.1);
     }
 
     nav ul.open {
@@ -1295,10 +1302,6 @@ section.dark-bg .testimonial-author .role {
     nav a:hover {
         border-bottom: 1px solid var(--gray-light);
         padding-left: 0.5rem;
-    }
-
-    .header-content {
-        flex-wrap: wrap;
     }
 }
 
