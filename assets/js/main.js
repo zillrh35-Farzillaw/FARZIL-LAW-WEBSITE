@@ -11,7 +11,7 @@
             if (loader.parentNode) loader.parentNode.removeChild(loader);
         }, 650);
     };
-    var minDelay = 1200;
+    var minDelay = 1500;
     var start = Date.now();
     window.addEventListener('load', function () {
         var elapsed = Date.now() - start;
