@@ -1523,18 +1523,42 @@ section.dark-bg .testimonial-author .role {
 
 .loader-brand--full {
     max-width: 320px;
-    font-size: 0.82rem;
-    letter-spacing: 2px;
-    line-height: 1.6;
     text-align: center;
     text-transform: uppercase;
+}
+
+.loader-brand-line {
+    display: block;
+}
+
+.loader-brand-line--main {
+    font-size: 1rem;
+    letter-spacing: 5px;
+    color: var(--bg-white);
+}
+
+.loader-brand-line--sub {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.4rem;
+}
+
+.loader-brand-line--tag {
+    font-size: 0.66rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.3rem;
 }
 
 @media (max-width: 480px) {
     .loader-mark { width: 46px; }
     .loader-mark--badge { width: 84px; }
     .loader-brand { font-size: 0.85rem; letter-spacing: 4px; }
-    .loader-brand--full { max-width: 250px; font-size: 0.68rem; letter-spacing: 1px; }
+    .loader-brand--full { max-width: 250px; }
+    .loader-brand-line--main { font-size: 0.82rem; letter-spacing: 3px; }
+    .loader-brand-line--sub { font-size: 0.62rem; letter-spacing: 1.5px; }
+    .loader-brand-line--tag { font-size: 0.58rem; letter-spacing: 2px; }
 }
 
 /* Capabilities Tabs */
