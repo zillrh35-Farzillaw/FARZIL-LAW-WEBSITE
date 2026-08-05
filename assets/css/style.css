@@ -1517,8 +1517,13 @@ section.dark-bg .testimonial-author .role {
     to { width: 90px; }
 }
 
+.loader-mark--badge {
+    width: 118px;
+}
+
 @media (max-width: 480px) {
     .loader-mark { width: 46px; }
+    .loader-mark--badge { width: 84px; }
     .loader-brand { font-size: 0.85rem; letter-spacing: 4px; }
 }
 
