@@ -1628,3 +1628,26 @@ section.dark-bg .testimonial-author .role {
     .cap-tab { padding: 0.65rem 1.4rem; font-size: 0.9rem; }
     .capabilities-tabs { gap: 0.5rem; }
 }
+
+section.dark-bg .cap-tab {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--bg-white);
+}
+
+section.dark-bg .cap-tab:hover {
+    border-color: var(--bg-white);
+}
+
+section.dark-bg .cap-tab.active {
+    background: var(--bg-white);
+    color: var(--primary-dark);
+    border-color: var(--bg-white);
+}
+
+section.dark-bg .cap-list-grid li {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+section.dark-bg .cap-list-grid li::before {
+    background: var(--bg-white);
+}
