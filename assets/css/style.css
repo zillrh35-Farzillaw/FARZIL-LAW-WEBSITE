@@ -165,7 +165,7 @@ nav a.active {
 }
 
 .hero-bg-slide--lahore {
-    background-image: url('../images/hero-bg.jpg');
+    background-image: url('../images/hero-bg.jpg?v=3');
 }
 
 .hero-bg-slide--islamabad {
@@ -250,7 +250,7 @@ nav a.active {
 
 /* Page Banner (inner pages) */
 .page-banner {
-    background: linear-gradient(135deg, rgba(13, 13, 13, 0.72) 0%, rgba(43, 43, 43, 0.76) 100%), url('../images/hero-bg.jpg');
+    background: linear-gradient(135deg, rgba(13, 13, 13, 0.72) 0%, rgba(43, 43, 43, 0.76) 100%), url('../images/hero-bg.jpg?v=3');
     background-size: cover;
     background-position: center;
     color: var(--bg-white);
@@ -1258,7 +1258,7 @@ section.dark-bg .testimonial-author .written-badge {
 
 /* Centre for Dispute Resolution page */
 .center-hero {
-    background: linear-gradient(135deg, rgba(13, 13, 13, 0.8) 0%, rgba(13, 13, 13, 0.68) 100%), url('../images/hero-bg.jpg');
+    background: linear-gradient(135deg, rgba(13, 13, 13, 0.8) 0%, rgba(13, 13, 13, 0.68) 100%), url('../images/hero-bg.jpg?v=3');
     background-size: cover;
     background-position: center;
     color: var(--bg-white);
