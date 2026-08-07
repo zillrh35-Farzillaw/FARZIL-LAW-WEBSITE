@@ -93,6 +93,35 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Gallery lightbox
+    var galleryGrid = document.querySelector('.gallery-grid');
+    if (galleryGrid) {
+        var lightbox = document.createElement('div');
+        lightbox.className = 'lightbox-overlay';
+        lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="">';
+        document.body.appendChild(lightbox);
+        var lightboxImg = lightbox.querySelector('img');
+
+        var closeLightbox = function () {
+            lightbox.classList.remove('open');
+            lightboxImg.src = '';
+        };
+
+        galleryGrid.addEventListener('click', function (e) {
+            var img = e.target.closest('.gallery-item img');
+            if (!img) return;
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || '';
+            lightbox.classList.add('open');
+        });
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-close')) closeLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    }
+
     // Contact form -> WhatsApp handoff
     var waForm = document.getElementById('whatsappContactForm');
     if (waForm) {
