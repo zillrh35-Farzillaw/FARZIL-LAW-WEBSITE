@@ -777,9 +777,9 @@ section.dark-bg .practice-card p {
 
 .gallery-item img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
-    object-position: center top;
+    height: 260px;
+    object-fit: contain;
+    background: var(--bg-light);
     display: block;
 }
 
@@ -790,7 +790,7 @@ section.dark-bg .practice-card p {
 }
 
 .gallery-item--featured img {
-    height: 380px;
+    height: 420px;
 }
 
 .gallery-featured-tag {
