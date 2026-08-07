@@ -779,6 +779,7 @@ section.dark-bg .practice-card p {
     width: 100%;
     height: 240px;
     object-fit: cover;
+    object-position: center top;
     display: block;
 }
 
@@ -818,12 +819,18 @@ section.dark-bg .practice-card p {
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--primary-dark);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0;
 }
 
-.gallery-meta {
-    font-size: 0.9rem;
+.gallery-caption .gallery-meta {
+    display: none;
+}
+
+.gallery-view-hint {
+    display: block;
+    font-size: 0.8rem;
     color: var(--text-light);
+    margin-top: 0.5rem;
 }
 
 .gallery-empty-state {
@@ -845,16 +852,46 @@ section.dark-bg .practice-card p {
     justify-content: center;
     z-index: 1000;
     padding: 2rem;
+    overflow-y: auto;
 }
 
 .lightbox-overlay.open {
     display: flex;
 }
 
-.lightbox-overlay img {
-    max-width: 90vw;
-    max-height: 85vh;
+.lightbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
     border-radius: var(--radius-sm);
+}
+
+.lightbox-info {
+    color: var(--bg-white);
+    text-align: center;
+    margin-top: 1.3rem;
+    max-width: 700px;
+}
+
+.lightbox-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.lightbox-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cfcfcf;
 }
 
 .lightbox-close {
