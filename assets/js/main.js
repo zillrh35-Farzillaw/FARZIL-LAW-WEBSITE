@@ -98,9 +98,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (galleryGrid) {
         var lightbox = document.createElement('div');
         lightbox.className = 'lightbox-overlay';
-        lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="">';
+        lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+            '<div class="lightbox-content">' +
+            '<img src="" alt="">' +
+            '<div class="lightbox-info"><p class="lightbox-title"></p><p class="lightbox-description"></p></div>' +
+            '</div>';
         document.body.appendChild(lightbox);
         var lightboxImg = lightbox.querySelector('img');
+        var lightboxTitle = lightbox.querySelector('.lightbox-title');
+        var lightboxDescription = lightbox.querySelector('.lightbox-description');
 
         var closeLightbox = function () {
             lightbox.classList.remove('open');
@@ -108,10 +114,15 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         galleryGrid.addEventListener('click', function (e) {
-            var img = e.target.closest('.gallery-item img');
-            if (!img) return;
+            var item = e.target.closest('.gallery-item');
+            if (!item) return;
+            var img = item.querySelector('img');
+            var title = item.querySelector('.gallery-event');
+            var description = item.querySelector('.gallery-meta');
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt || '';
+            lightboxTitle.textContent = title ? title.textContent : '';
+            lightboxDescription.textContent = description ? description.textContent : '';
             lightbox.classList.add('open');
         });
         lightbox.addEventListener('click', function (e) {
