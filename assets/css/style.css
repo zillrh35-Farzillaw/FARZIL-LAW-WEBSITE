@@ -751,6 +751,99 @@ section.dark-bg .practice-card p {
     height: 240px;
 }
 
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.2rem 1rem 0.9rem;
+    background: linear-gradient(to top, rgba(13,13,13,0.85), rgba(13,13,13,0));
+    color: var(--bg-white);
+}
+
+.gallery-event {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.gallery-meta {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.gallery-empty-state {
+    text-align: center;
+    max-width: 500px;
+    margin: 3rem auto 0;
+    padding: 3rem 2rem;
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    color: var(--text-light);
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.lightbox-overlay.open {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: var(--radius-sm);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: var(--bg-white);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+}
+
 /* Contact Section */
 .contact-wrapper {
     display: grid;
@@ -1441,7 +1534,8 @@ section.dark-bg .testimonial-author .written-badge {
 
     .practices-grid,
     .team-grid,
-    .team-grid-mini {
+    .team-grid-mini,
+    .gallery-grid {
         grid-template-columns: 1fr;
     }
 
