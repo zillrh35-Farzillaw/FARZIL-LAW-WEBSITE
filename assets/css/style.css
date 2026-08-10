@@ -915,8 +915,9 @@ section.dark-bg .practice-card p {
 .insight-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
     margin-top: 3rem;
-    border-top: 1px solid var(--gray-light);
 }
 
 .insight-row {
@@ -924,8 +925,13 @@ section.dark-bg .practice-card p {
     justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
-    padding: 2.2rem 0;
-    border-bottom: 1px solid var(--gray-light);
+    width: 100%;
+    max-width: 900px;
+    padding: 2.2rem 2.4rem;
+    background: var(--bg-white);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .insight-row-content {
@@ -1852,7 +1858,7 @@ section.dark-bg .testimonial-author .written-badge {
 
     .insight-row {
         flex-direction: column;
-        padding: 1.5rem 0;
+        padding: 1.5rem;
     }
 
     .insight-thumb {
