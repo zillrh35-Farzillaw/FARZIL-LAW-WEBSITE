@@ -36,6 +36,26 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://farzillaw.com/insights/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://farzillaw.com/relaxation-in-taxation-during-the-pandemic/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://farzillaw.com/pakistan-legislative-mechanisms-against-covid-19/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://farzillaw.com/banks-serving-as-whistle-blowers/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://farzillaw.com/careers/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
