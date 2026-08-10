@@ -1090,6 +1090,50 @@ section.dark-bg .practice-card p {
     margin: 0 auto 1.5rem;
 }
 
+.insight-submit-guidelines {
+    text-align: left;
+    max-width: 620px;
+    margin: 0 auto 1.8rem;
+    padding: 1.6rem 1.8rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-sm);
+}
+
+.insight-submit-guidelines h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--bg-white);
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+}
+
+.insight-submit-guidelines ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.insight-submit-guidelines li {
+    color: #cfcfcf;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    padding-left: 1.3rem;
+    position: relative;
+}
+
+.insight-submit-guidelines li:last-child {
+    margin-bottom: 0;
+}
+
+.insight-submit-guidelines li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.4);
+}
+
 /* Insight article page */
 .insight-byline {
     display: flex;
