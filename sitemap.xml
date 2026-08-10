@@ -6,82 +6,82 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/about.html</loc>
+        <loc>https://farzillaw.com/about/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/practices.html</loc>
+        <loc>https://farzillaw.com/practices/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/team.html</loc>
+        <loc>https://farzillaw.com/team/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/dispute-resolution.html</loc>
+        <loc>https://farzillaw.com/dispute-resolution/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/testimonials.html</loc>
+        <loc>https://farzillaw.com/testimonials/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/gallery.html</loc>
+        <loc>https://farzillaw.com/gallery/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/careers.html</loc>
+        <loc>https://farzillaw.com/careers/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/contact.html</loc>
+        <loc>https://farzillaw.com/contact/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/farrukh-mushtaq.html</loc>
+        <loc>https://farzillaw.com/farrukh-mushtaq/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/samra-tahir.html</loc>
+        <loc>https://farzillaw.com/samra-tahir/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/muhammad-yousaf-raza.html</loc>
+        <loc>https://farzillaw.com/muhammad-yousaf-raza/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/faraz-gujjar.html</loc>
+        <loc>https://farzillaw.com/faraz-gujjar/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/gulzar-altaf.html</loc>
+        <loc>https://farzillaw.com/gulzar-altaf/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/haris-bhatti.html</loc>
+        <loc>https://farzillaw.com/haris-bhatti/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/ashir-khan-sadozai.html</loc>
+        <loc>https://farzillaw.com/ashir-khan-sadozai/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://farzillaw.com/zill-e-rukh-mushtaq.html</loc>
+        <loc>https://farzillaw.com/zill-e-rukh-mushtaq/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
