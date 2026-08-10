@@ -915,56 +915,41 @@ section.dark-bg .practice-card p {
 .insight-list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     margin-top: 3rem;
+    border-top: 1px solid var(--gray-light);
 }
 
-.insight-card {
+.insight-row {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 2rem;
-    background: var(--bg-white);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    padding: 2rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 2.2rem 0;
+    border-bottom: 1px solid var(--gray-light);
 }
 
-.insight-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-.insight-photo {
-    flex: 0 0 120px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center top;
-}
-
-.insight-content {
+.insight-row-content {
     flex: 1;
     min-width: 0;
 }
 
-.insight-author {
+.insight-tag {
+    display: inline-block;
+    font-size: 0.75rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--text-light);
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
-}
-
-.insight-author a {
-    color: var(--primary-dark);
+    margin-bottom: 0.7rem;
 }
 
 .insight-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-dark);
-    margin-bottom: 0.6rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
 }
 
 .insight-title a {
@@ -972,19 +957,44 @@ section.dark-bg .practice-card p {
 }
 
 .insight-excerpt {
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-}
-
-.insight-meta {
-    font-size: 0.85rem;
     color: var(--text-light);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
 }
 
-.insight-link {
-    font-weight: 700;
-    color: var(--primary-dark);
+.insight-author {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.insight-thumb {
+    flex: 0 0 150px;
+    width: 150px;
+    height: 105px;
+    background-size: cover;
+    background-position: center top;
+    border-radius: var(--radius-sm);
+}
+
+.insight-thumb-group {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.insight-thumb-group .insight-thumb-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center top;
+    border: 3px solid var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.insight-thumb-group .insight-thumb-circle + .insight-thumb-circle {
+    margin-left: -1.6rem;
 }
 
 .insight-submit-cta {
@@ -1827,15 +1837,19 @@ section.dark-bg .testimonial-author .written-badge {
         height: 280px;
     }
 
-    .insight-card {
-        flex-direction: column;
-        padding: 1.5rem;
+    .insight-row {
+        flex-direction: column-reverse;
+        padding: 1.5rem 0;
     }
 
-    .insight-photo {
-        width: 80px;
-        height: 80px;
-        flex-basis: 80px;
+    .insight-thumb {
+        width: 100%;
+        height: 160px;
+        flex-basis: auto;
+    }
+
+    .insight-thumb-group {
+        align-self: flex-start;
     }
 
     .stats-row {
