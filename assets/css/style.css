@@ -1005,6 +1005,30 @@ section.dark-bg .practice-card p {
     margin-left: -1.6rem;
 }
 
+.insights-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    margin-top: 3rem;
+}
+
+.insight-teaser-card {
+    background: var(--bg-white);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.insight-teaser-card .insight-title {
+    font-size: 1.2rem;
+}
+
+.insight-teaser-card .insight-excerpt {
+    font-size: 0.92rem;
+    margin-bottom: 0.9rem;
+}
+
 .insight-submit-cta {
     margin-top: 3rem;
     padding: 2.5rem;
