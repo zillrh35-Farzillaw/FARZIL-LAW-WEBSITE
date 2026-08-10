@@ -987,6 +987,27 @@ section.dark-bg .practice-card p {
     color: var(--primary-dark);
 }
 
+.insight-submit-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    text-align: center;
+    background: var(--primary-dark);
+    border-radius: var(--radius);
+}
+
+.insight-submit-cta h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.insight-submit-cta p {
+    color: #cfcfcf;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
 /* Insight article page */
 .insight-byline {
     display: flex;
@@ -1014,6 +1035,31 @@ section.dark-bg .practice-card p {
 
 .article-body p {
     margin-bottom: 1.3rem;
+}
+
+.article-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--primary-dark);
+    margin: 2.2rem 0 1rem;
+}
+
+.article-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin: 1.8rem 0 0.8rem;
+}
+
+.article-byline-multi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.article-byline-multi .director-card {
+    flex: 1 1 320px;
 }
 
 .article-body blockquote {
