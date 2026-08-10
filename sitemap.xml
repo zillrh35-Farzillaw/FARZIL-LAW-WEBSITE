@@ -41,6 +41,11 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://farzillaw.com/write-for-us/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
         <loc>https://farzillaw.com/relaxation-in-taxation-during-the-pandemic/</loc>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
