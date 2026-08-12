@@ -56,6 +56,11 @@ header {
     display: block;
 }
 
+.logo img.logo-img-lg {
+    height: 72px;
+    max-width: 100%;
+}
+
 .logo-text h1 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
@@ -2054,6 +2059,10 @@ section.dark-bg .testimonial-author .written-badge {
     }
 
     .logo img {
+        height: 44px;
+    }
+
+    .logo img.logo-img-lg {
         height: 44px;
     }
 
