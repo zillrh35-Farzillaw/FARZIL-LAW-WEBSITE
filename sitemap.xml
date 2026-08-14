@@ -46,6 +46,16 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://farzillaw.com/community/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://farzillaw.com/youth-is-not-only-the-future/</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://farzillaw.com/write-for-us/</loc>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
