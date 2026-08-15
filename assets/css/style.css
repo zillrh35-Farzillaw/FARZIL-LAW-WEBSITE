@@ -646,6 +646,11 @@ section.dark-bg .practice-card p {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .team-info .credentials {
@@ -655,6 +660,11 @@ section.dark-bg .practice-card p {
     margin-top: 0.8rem;
     padding-top: 0.8rem;
     border-top: 1px solid var(--gray-light);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
 }
 
 .linkedin-btn {
