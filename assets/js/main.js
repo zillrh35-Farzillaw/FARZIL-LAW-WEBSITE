@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
         galleryGrid.addEventListener('click', function (e) {
             var item = e.target.closest('.gallery-item');
             if (!item) return;
-            var img = item.querySelector('img');
+            var img = e.target.tagName === 'IMG' ? e.target : item.querySelector('img');
             var title = item.querySelector('.gallery-event');
             var description = item.querySelector('.gallery-meta');
             lightboxImg.src = img.src;
