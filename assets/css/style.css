@@ -1306,6 +1306,34 @@ section.dark-bg .practice-card p {
     font-style: italic;
 }
 
+.case-header {
+    background: var(--bg-white);
+    border: 1px solid var(--gray-light);
+    border-left: 3px solid var(--primary-dark);
+    border-radius: var(--radius-sm);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.8rem;
+}
+
+.case-header p {
+    margin-bottom: 0.5rem;
+    font-size: 0.98rem;
+}
+
+.case-header p:last-child {
+    margin-bottom: 0;
+}
+
+.case-label {
+    display: inline-block;
+    min-width: 90px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
 .article-byline-multi {
     display: flex;
     flex-wrap: wrap;
