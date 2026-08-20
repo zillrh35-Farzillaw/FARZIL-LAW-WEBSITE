@@ -1314,8 +1314,10 @@ section.dark-bg .practice-card p {
     margin-top: 1.2rem;
 }
 
-.mediator-actions .linkedin-btn {
+.mediator-actions .linkedin-btn,
+.mediator-actions .portfolio-btn {
     margin-top: 0;
+    margin-left: 0;
 }
 
 .mediator-actions .mediator-contact {
