@@ -1982,7 +1982,7 @@ section.dark-bg .testimonial-author .written-badge {
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: start;
     background: var(--bg-white);
     border-radius: var(--radius);
     padding: 2.5rem;
