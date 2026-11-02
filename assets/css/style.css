@@ -2017,6 +2017,15 @@ section.dark-bg .testimonial-author .written-badge {
     margin-bottom: 0.3rem;
 }
 
+.director-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.director-card h3 a:hover {
+    color: var(--text-light);
+}
+
 .director-card .director-title {
     color: var(--primary-dark);
     font-weight: 600;
