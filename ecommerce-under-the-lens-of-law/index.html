@@ -111,6 +111,32 @@
                 <a href="https://www.pljlawsite.com/html/2024art5.htm" target="_blank" rel="noopener" class="btn btn-dark">READ ORIGINAL ON PLJ &rarr;</a>
                 <a href="/insights/" class="btn btn-dark">&larr; BACK TO INSIGHTS</a>
             </div>
+
+            <div class="comments-section" data-article="ecommerce-under-the-lens-of-law">
+                <h3>Comments <span class="comments-count"></span></h3>
+                <div class="comment-list"><p class="comments-notice">Loading comments&hellip;</p></div>
+                <form class="comment-form">
+                    <h4>Leave a Comment</h4>
+                    <div class="form-group form-group-hidden">
+                        <label for="website-ecommerce-under-the-lens-of-law">Website</label>
+                        <input type="text" id="website-ecommerce-under-the-lens-of-law" name="website" autocomplete="off" tabindex="-1">
+                    </div>
+                    <div class="form-group">
+                        <label for="name-ecommerce-under-the-lens-of-law">Name <span class="required">*</span></label>
+                        <input type="text" id="name-ecommerce-under-the-lens-of-law" name="commenter-name" placeholder="Your name" required maxlength="80">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo-ecommerce-under-the-lens-of-law">Photo (optional)</label>
+                        <input type="file" id="photo-ecommerce-under-the-lens-of-law" name="commenter-photo" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="text-ecommerce-under-the-lens-of-law">Comment <span class="required">*</span></label>
+                        <textarea id="text-ecommerce-under-the-lens-of-law" name="commenter-text" placeholder="Share your thoughts..." required maxlength="2000" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Comment</button>
+                    <p class="comment-form-status" role="status"></p>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -158,6 +184,11 @@
             <p>FARZIL LAW © 2022 - 2026. All rights reserved. | Advocates, Corporates & Legal Consultants</p>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+    <script src="/assets/js/firebase-config.js"></script>
+    <script src="/assets/js/comments.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 </html>

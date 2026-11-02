@@ -167,6 +167,32 @@
                 <a href="/nestle-v-cadbury-shape-trademark/" class="btn btn-dark">READ: NESTL&Eacute; v CADBURY &rarr;</a>
                 <a href="/insights/" class="btn btn-dark">&larr; BACK TO INSIGHTS</a>
             </div>
+
+            <div class="comments-section" data-article="understanding-intellectual-property-and-trademark">
+                <h3>Comments <span class="comments-count"></span></h3>
+                <div class="comment-list"><p class="comments-notice">Loading comments&hellip;</p></div>
+                <form class="comment-form">
+                    <h4>Leave a Comment</h4>
+                    <div class="form-group form-group-hidden">
+                        <label for="website-understanding-intellectual-property-and-trademark">Website</label>
+                        <input type="text" id="website-understanding-intellectual-property-and-trademark" name="website" autocomplete="off" tabindex="-1">
+                    </div>
+                    <div class="form-group">
+                        <label for="name-understanding-intellectual-property-and-trademark">Name <span class="required">*</span></label>
+                        <input type="text" id="name-understanding-intellectual-property-and-trademark" name="commenter-name" placeholder="Your name" required maxlength="80">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo-understanding-intellectual-property-and-trademark">Photo (optional)</label>
+                        <input type="file" id="photo-understanding-intellectual-property-and-trademark" name="commenter-photo" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="text-understanding-intellectual-property-and-trademark">Comment <span class="required">*</span></label>
+                        <textarea id="text-understanding-intellectual-property-and-trademark" name="commenter-text" placeholder="Share your thoughts..." required maxlength="2000" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Comment</button>
+                    <p class="comment-form-status" role="status"></p>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -214,6 +240,11 @@
             <p>FARZIL LAW © 2026. All rights reserved. | Advocates, Corporates & Legal Consultants</p>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+    <script src="/assets/js/firebase-config.js"></script>
+    <script src="/assets/js/comments.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 </html>
