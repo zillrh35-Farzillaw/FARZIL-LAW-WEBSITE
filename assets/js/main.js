@@ -156,4 +156,17 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'https://wa.me/' + number + '?text=' + text;
         });
     }
+
+    // Native share button (progressive enhancement)
+    document.querySelectorAll('.share-native').forEach(function (btn) {
+        if (navigator.share) {
+            btn.style.display = '';
+            btn.addEventListener('click', function () {
+                navigator.share({
+                    title: btn.getAttribute('data-title'),
+                    url: btn.getAttribute('data-url')
+                }).catch(function () {});
+            });
+        }
+    });
 });
