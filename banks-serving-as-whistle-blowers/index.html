@@ -174,30 +174,22 @@ e) copies of each currency transactions report and suspicious transactions repor
                 <a href="/insights/" class="btn btn-dark">&larr; BACK TO INSIGHTS</a>
             </div>
 
-            <div class="comments-section" data-article="banks-serving-as-whistle-blowers">
-                <h3>Comments <span class="comments-count"></span></h3>
-                <div class="comment-list"><p class="comments-notice">Loading comments&hellip;</p></div>
-                <form class="comment-form">
-                    <h4>Leave a Comment</h4>
-                    <div class="form-group form-group-hidden">
-                        <label for="website-banks-serving-as-whistle-blowers">Website</label>
-                        <input type="text" id="website-banks-serving-as-whistle-blowers" name="website" autocomplete="off" tabindex="-1">
-                    </div>
-                    <div class="form-group">
-                        <label for="name-banks-serving-as-whistle-blowers">Name <span class="required">*</span></label>
-                        <input type="text" id="name-banks-serving-as-whistle-blowers" name="commenter-name" placeholder="Your name" required maxlength="80">
-                    </div>
-                    <div class="form-group">
-                        <label for="photo-banks-serving-as-whistle-blowers">Photo (optional)</label>
-                        <input type="file" id="photo-banks-serving-as-whistle-blowers" name="commenter-photo" accept="image/*">
-                    </div>
-                    <div class="form-group">
-                        <label for="text-banks-serving-as-whistle-blowers">Comment <span class="required">*</span></label>
-                        <textarea id="text-banks-serving-as-whistle-blowers" name="commenter-text" placeholder="Share your thoughts..." required maxlength="2000" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Submit Comment</button>
-                    <p class="comment-form-status" role="status"></p>
-                </form>
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = "https://farzillaw.com/banks-serving-as-whistle-blowers/";
+                        this.page.identifier = 'banks-serving-as-whistle-blowers';
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://farzil-law.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
         </div>
     </section>
@@ -246,8 +238,6 @@ e) copies of each currency transactions report and suspicious transactions repor
             <p>FARZIL LAW © 2022 - 2026. All rights reserved. | Advocates, Corporates & Legal Consultants</p>
         </div>
     </footer>
-    <script src="/assets/js/comments-config.js"></script>
-    <script src="/assets/js/comments.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 </html>

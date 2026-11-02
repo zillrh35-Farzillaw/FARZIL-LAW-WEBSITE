@@ -2700,7 +2700,7 @@ section.dark-bg .cap-list-grid li::before {
     }
 }
 
-/* Reader comments */
+/* Reader comments (Disqus) */
 .comments-section {
     max-width: 800px;
     margin-top: 3.5rem;
@@ -2713,107 +2713,4 @@ section.dark-bg .cap-list-grid li::before {
     color: var(--primary-dark);
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
-}
-
-.comments-count {
-    font-weight: 400;
-    color: var(--text-light);
-    font-size: 1.1rem;
-}
-
-.comment-list {
-    margin-bottom: 2.5rem;
-}
-
-.comments-notice {
-    color: var(--text-light);
-    font-style: italic;
-}
-
-.comment-card {
-    display: flex;
-    gap: 1rem;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--gray-light);
-}
-
-.comment-card:first-child {
-    padding-top: 0;
-}
-
-.comment-avatar {
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    background-color: var(--bg-light);
-}
-
-.comment-avatar-initials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary-dark);
-    color: var(--bg-white);
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.comment-body {
-    flex: 1;
-}
-
-.comment-meta {
-    margin: 0 0 0.3rem;
-    font-size: 0.95rem;
-}
-
-.comment-meta strong {
-    color: var(--text-dark);
-}
-
-.comment-meta span {
-    color: var(--text-light);
-    margin-left: 0.5rem;
-}
-
-.comment-text {
-    margin: 0;
-    font-size: 1.02rem;
-    line-height: 1.6;
-}
-
-.comment-form {
-    background: var(--bg-white);
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 24px rgba(13,13,13,0.06);
-}
-
-.comment-form h4 {
-    font-family: 'Playfair Display', serif;
-    color: var(--primary-dark);
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-}
-
-.comment-form .form-group-hidden {
-    position: absolute;
-    left: -9999px;
-}
-
-.comment-form-status {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-}
-
-.comment-form-status-success {
-    color: #1a7a3c;
-}
-
-.comment-form-status-error {
-    color: #b3261e;
 }
