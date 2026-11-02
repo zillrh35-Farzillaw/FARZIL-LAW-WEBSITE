@@ -1,8 +1,9 @@
 // Reader comments widget. Renders approved comments for the current
 // article and lets visitors submit a new one (name, optional photo,
-// message) for moderation. Requires assets/js/firebase-config.js to hold
-// a real Firebase project config -- until then this degrades gracefully
-// and shows a quiet "coming soon" notice instead of a broken form.
+// message) for moderation. Backed by a Google Apps Script Web App
+// (see assets/js/comments-config.js and COMMENTS_SETUP.md) -- until
+// that's configured this degrades gracefully to a quiet notice instead
+// of a broken form.
 document.addEventListener('DOMContentLoaded', function () {
     var root = document.querySelector('.comments-section[data-article]');
     if (!root) return;
@@ -24,28 +25,18 @@ document.addEventListener('DOMContentLoaded', function () {
         if (formEl) formEl.style.display = 'none';
     }
 
-    var config = window.FARZIL_FIREBASE_CONFIG;
-    var configured = config && config.apiKey && config.apiKey.indexOf('REPLACE_ME') === -1;
+    var endpoint = window.FARZIL_COMMENTS_ENDPOINT;
+    var configured = endpoint && endpoint.indexOf('REPLACE_ME') === -1;
 
-    if (!configured || typeof firebase === 'undefined') {
+    if (!configured) {
         showNotice('Comments are being set up for this site — check back soon.');
         return;
     }
 
-    var app;
-    try {
-        app = firebase.apps && firebase.apps.length ? firebase.apps[0] : firebase.initializeApp(config);
-    } catch (e) {
-        showNotice('Comments are temporarily unavailable.');
-        return;
-    }
-
-    var db = firebase.firestore();
-    var storage = firebase.storage();
-
     function formatDate(ts) {
         try {
-            var d = ts && ts.toDate ? ts.toDate() : new Date(ts);
+            var d = new Date(ts);
+            if (isNaN(d.getTime())) return '';
             return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
         } catch (e) {
             return '';
@@ -59,9 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         docs.sort(function (a, b) {
-            var ta = a.createdAt && a.createdAt.toMillis ? a.createdAt.toMillis() : 0;
-            var tb = b.createdAt && b.createdAt.toMillis ? b.createdAt.toMillis() : 0;
-            return tb - ta;
+            return new Date(b.timestamp) - new Date(a.timestamp);
         });
         if (countEl) countEl.textContent = docs.length + (docs.length === 1 ? ' Comment' : ' Comments');
         listEl.innerHTML = docs.map(function (c) {
@@ -73,27 +62,44 @@ document.addEventListener('DOMContentLoaded', function () {
                 '<div class="comment-card">' +
                     avatar +
                     '<div class="comment-body">' +
-                        '<p class="comment-meta"><strong>' + escapeHtml(c.name) + '</strong> <span>' + formatDate(c.createdAt) + '</span></p>' +
+                        '<p class="comment-meta"><strong>' + escapeHtml(c.name) + '</strong> <span>' + formatDate(c.timestamp) + '</span></p>' +
                         '<p class="comment-text">' + escapeHtml(c.text).replace(/\n/g, '<br>') + '</p>' +
                     '</div>' +
                 '</div>';
         }).join('');
     }
 
-    db.collection('comments')
-        .where('articleSlug', '==', slug)
-        .where('approved', '==', true)
-        .get()
-        .then(function (snap) {
-            var docs = [];
-            snap.forEach(function (doc) { docs.push(doc.data()); });
-            renderComments(docs);
-        })
+    fetch(endpoint + '?article=' + encodeURIComponent(slug))
+        .then(function (res) { return res.json(); })
+        .then(function (data) { renderComments(data.comments || []); })
         .catch(function () {
             listEl.innerHTML = '<p class="comments-notice">Couldn&rsquo;t load comments right now. Please try again later.</p>';
         });
 
     if (!formEl) return;
+
+    function resizeImage(file, maxDim, quality) {
+        return new Promise(function (resolve, reject) {
+            var img = new Image();
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                img.onload = function () {
+                    var scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+                    var w = Math.max(1, Math.round(img.width * scale));
+                    var h = Math.max(1, Math.round(img.height * scale));
+                    var canvas = document.createElement('canvas');
+                    canvas.width = w;
+                    canvas.height = h;
+                    canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                    resolve(canvas.toDataURL('image/jpeg', quality));
+                };
+                img.onerror = function () { reject(new Error('Could not read image.')); };
+                img.src = e.target.result;
+            };
+            reader.onerror = function () { reject(new Error('Could not read file.')); };
+            reader.readAsDataURL(file);
+        });
+    }
 
     formEl.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -133,8 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 statusEl.className = 'comment-form-status comment-form-status-error';
                 return;
             }
-            if (file.size > 4 * 1024 * 1024) {
-                statusEl.textContent = 'Photo must be smaller than 4MB.';
+            if (file.size > 8 * 1024 * 1024) {
+                statusEl.textContent = 'Photo must be smaller than 8MB.';
                 statusEl.className = 'comment-form-status comment-form-status-error';
                 return;
             }
@@ -145,27 +151,22 @@ document.addEventListener('DOMContentLoaded', function () {
         statusEl.textContent = '';
         statusEl.className = 'comment-form-status';
 
-        function saveComment(photoURL) {
-            return db.collection('comments').add({
-                articleSlug: slug,
-                name: name,
-                text: text,
-                photoURL: photoURL || null,
-                approved: false,
-                createdAt: firebase.firestore.FieldValue.serverTimestamp()
-            });
-        }
+        var photoPromise = file ? resizeImage(file, 400, 0.72) : Promise.resolve('');
 
-        var upload = Promise.resolve(null);
-        if (file) {
-            var safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
-            var ref = storage.ref().child('comments/' + slug + '/' + Date.now() + '_' + safeName);
-            upload = ref.put(file).then(function (snapshot) {
-                return snapshot.ref.getDownloadURL();
+        photoPromise.then(function (photoData) {
+            return fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({
+                    articleSlug: slug,
+                    name: name,
+                    text: text,
+                    photoData: photoData
+                })
             });
-        }
-
-        upload.then(saveComment).then(function () {
+        }).then(function (res) { return res.json(); })
+        .then(function (data) {
+            if (!data || !data.ok) throw new Error((data && data.error) || 'Unknown error');
             formEl.reset();
             statusEl.textContent = 'Thank you! Your comment has been submitted and will appear once reviewed.';
             statusEl.className = 'comment-form-status comment-form-status-success';
