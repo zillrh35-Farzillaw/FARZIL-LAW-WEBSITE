@@ -1102,6 +1102,17 @@ section.dark-bg .practice-card p {
     margin-left: -1.2rem;
 }
 
+.insight-teaser-photo.initials {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-white);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
 .insight-teaser-card .insight-tag {
     margin-bottom: 0.6rem;
 }
@@ -1229,6 +1240,18 @@ section.dark-bg .practice-card p {
     background-size: cover;
     background-position: center 15%;
     border-radius: 50%;
+}
+
+.insight-photo.initials {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-white);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .insight-byline .insight-photo {
