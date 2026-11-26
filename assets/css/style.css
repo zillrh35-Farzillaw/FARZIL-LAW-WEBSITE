@@ -27,7 +27,7 @@ body {
 /* Header & Navigation */
 header {
     background: var(--bg-white);
-    padding: 1rem 0;
+    padding: 0.6rem 0;
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
@@ -73,13 +73,14 @@ header {
     font-family: 'EB Garamond', serif;
     font-size: 0.8rem;
     color: var(--text-light);
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
     font-weight: 600;
     margin-top: 2px;
+    white-space: nowrap;
 }
 
 .nav-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
@@ -111,12 +112,33 @@ header {
     transform: translateY(-7px) rotate(-45deg);
 }
 
+.header-content {
+    position: relative;
+}
+
 nav ul {
-    display: flex;
+    display: none;
     list-style: none;
-    gap: 1.6rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem 0.5rem;
+    background: var(--bg-white);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+nav ul.open {
+    display: flex;
+}
+
+nav li {
+    width: 100%;
 }
 
 nav a {
@@ -127,15 +149,18 @@ nav a {
     position: relative;
     font-size: 0.98rem;
     letter-spacing: 0.02em;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
+    border-bottom: 1px solid var(--gray-light);
+    padding: 0.9rem 0;
     white-space: nowrap;
+    display: block;
+    width: 100%;
 }
 
-nav a:hover,
-nav a.active {
+nav a.active,
+nav a:hover {
     color: var(--black);
-    border-bottom: 2px solid var(--black);
+    border-bottom: 1px solid var(--gray-light);
+    padding-left: 0.5rem;
 }
 
 /* Hero Section */
@@ -2082,53 +2107,6 @@ section.dark-bg .testimonial-author .written-badge {
 }
 
 /* Responsive Design */
-@media (max-width: 900px) {
-    .nav-toggle {
-        display: flex;
-    }
-
-    .header-content {
-        position: relative;
-    }
-
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        width: 100%;
-        margin-top: 1rem;
-        padding: 1rem 1.5rem 0.5rem;
-        background: var(--bg-white);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-    }
-
-    nav ul.open {
-        display: flex;
-    }
-
-    nav li {
-        width: 100%;
-    }
-
-    nav a {
-        display: block;
-        width: 100%;
-        padding: 0.9rem 0;
-        border-bottom: 1px solid var(--gray-light);
-    }
-
-    nav a.active,
-    nav a:hover {
-        border-bottom: 1px solid var(--gray-light);
-        padding-left: 0.5rem;
-    }
-}
-
 @media (max-width: 768px) {
     .hero {
         padding: 4rem 1rem;
@@ -2265,7 +2243,8 @@ section.dark-bg .testimonial-author .written-badge {
     }
 
     .logo-text p {
-        font-size: 0.6rem;
+        font-size: 0.52rem;
+        letter-spacing: 0.02em;
     }
 
     .hero {
